@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive Modern Resume & Portfolio">
+    <meta name="author" content="Resume Owner">
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="Interactive Professional Resume">
+    <meta property="og:description" content="Explore my experience, skills, projects, and achievements.">
+    <meta property="og:type" content="website">
+
+    <title>Resume | Professional Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- html2pdf.js for Dynamic PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Dynamic Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Glowing Background Orbs -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-accent">&lt;</span><span id="nav-initials">GU</span><span class="logo-accent"> /&gt;</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#about" class="nav-link"><i class="fa-solid fa-user-astronaut"></i> About</a>
+                <a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a>
+                <a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a>
+                <a href="#projects" class="nav-link"><i class="fa-solid fa-rocket"></i> Projects</a>
+                <a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a>
+                <a href="#contact" class="nav-link"><i class="fa-solid fa-paper-plane"></i> Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Theme" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+
+                <button class="btn btn-sm btn-outline print-btn" id="header-pdf-btn" title="Download PDF Resume">
+                    <i class="fa-solid fa-file-pdf"></i> <span>PDF</span>
+                </button>
+
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    <span id="hero-status">Available for exciting opportunities</span>
+                </div>
+
+                <div class="hero-content">
+                    <div class="hero-avatar-wrapper">
+                        <div class="avatar-glow"></div>
+                        <div class="avatar-circle">
+                            <span class="avatar-placeholder" id="avatar-initials">GU</span>
+                            <img id="avatar-img" src="" alt="Profile Picture" class="avatar-img hidden">
+                        </div>
+                    </div>
+
+                    <h1 class="hero-name" id="hero-name">Ganesh Ubale</h1>
+                    
+                    <div class="hero-title-wrapper">
+                        <span class="static-prefix">I am a</span>
+                        <span class="typing-text" id="typing-text">Senior iOS & iPadOS Lead Engineer</span>
+                        <span class="cursor">|</span>
+                    </div>
+
+                    <p class="hero-tagline" id="hero-tagline">
+                        11+ years of expertise crafting high-performance, resilient iOS & iPadOS applications, custom Mobile SDKs, and AI-driven developer automation tools.
+                    </p>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fa-solid fa-envelope"></i> Get In Touch
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fa-solid fa-code"></i> View Work
+                        </a>
+                        <button class="btn btn-outline" id="download-cv-btn">
+                            <i class="fa-solid fa-download"></i> Save CV
+                        </button>
+                    </div>
+
+                    <div class="hero-socials" id="hero-socials">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-down-btn" aria-label="Scroll Down">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">GET TO KNOW ME</span>
+                    <h2 class="section-title"><i class="fa-solid fa-user"></i> About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card glass-card">
+                        <p class="about-bio" id="about-bio">
+                            Passionate software engineer with experience building modern web applications, scalable architecture, and elegant user interfaces. Dedicated to clean code, performance optimization, and continuous learning.
+                        </p>
+                        
+                        <div class="highlights-grid" id="highlights-grid">
+                            <!-- Rendered by JS -->
+                        </div>
+                    </div>
+
+                    <div class="stats-card glass-card" id="stats-card">
+                        <!-- Stats rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">MY JOURNEY</span>
+                    <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="timeline" id="experience-timeline">
+                    <!-- Timeline items rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">CAPABILITIES & TOOLS</span>
+                    <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical Skills</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="skills-filter" id="skills-filter">
+                    <!-- Filter buttons rendered by JS -->
+                </div>
+
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Skills categories rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">FEATURED WORK</span>
+                    <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Projects & Creations</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="project-filters" id="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="fullstack">iOS & iPadOS Apps</button>
+                    <button class="filter-btn" data-filter="backend">Mobile SDK & IoT</button>
+                    <button class="filter-btn" data-filter="opensource">AI & MCP Automation</button>
+                </div>
+
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project cards rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">BACKGROUND</span>
+                    <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Certifications</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="education-grid">
+                    <div class="edu-column">
+                        <h3 class="column-heading"><i class="fa-solid fa-university"></i> Academic Degree</h3>
+                        <div class="edu-cards-list" id="education-list">
+                            <!-- Education items rendered by JS -->
+                        </div>
+                    </div>
+
+                    <div class="edu-column">
+                        <h3 class="column-heading"><i class="fa-solid fa-award"></i> Certifications</h3>
+                        <div class="edu-cards-list" id="certifications-list">
+                            <!-- Certifications rendered by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">SAY HELLO</span>
+                    <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Contact Me</h2>
+                    <div class="section-line"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-card glass-card">
+                        <h3>Let's build something awesome together!</h3>
+                        <p>Feel free to reach out for career opportunities, freelance work, open-source collaborations, or just a friendly developer chat.</p>
+
+                        <div class="contact-methods" id="contact-methods">
+                            <!-- Contact items rendered by JS -->
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card glass-card">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="form-name">Your Name</label>
+                                <input type="text" id="form-name" required placeholder="John Doe">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-email">Your Email</label>
+                                <input type="email" id="form-email" required placeholder="john@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-subject">Subject</label>
+                                <input type="text" id="form-subject" required placeholder="Project Opportunity / Hello">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <textarea id="form-message" rows="5" required placeholder="Your message here..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fa-solid fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; <span id="footer-year">2026</span> <span id="footer-name">Ganesh Ubale</span>. Designed & Built with ❤️ for GitHub Pages.</p>
+            <div class="footer-links">
+                <a href="#hero">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <span id="toast-message">Message sent successfully!</span>
+    </div>
+
+    <!-- Resume Data Script -->
+    <script src="resume-data.js"></script>
+    <!-- Main Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>
