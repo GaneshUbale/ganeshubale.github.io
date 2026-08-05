@@ -979,7 +979,8 @@ a:hover {
     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
 }
 
-.projects-grid {
+.projects-grid,
+.poc-blogs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 2rem;
@@ -990,6 +991,14 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+.poc-blog-card {
+    cursor: pointer;
+}
+
+.poc-blog-card:hover {
+    transform: translateY(-4px);
 }
 
 .project-top {

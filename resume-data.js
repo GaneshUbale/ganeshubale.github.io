@@ -25,7 +25,7 @@ const RESUME_DATA = {
         socials: [
             { platform: "GitHub", url: "https://github.com/GaneshUbale", icon: "fa-brands fa-github" },
             { platform: "LinkedIn", url: "https://www.linkedin.com/in/ganesh-ubale-1b6ab053/", icon: "fa-brands fa-linkedin" },
-            { platform: "Email", url: "mailto:ubaleganesh096@gmail.com", icon: "fa-solid fa-envelope" },
+            { platform: "Email", url: "mailto:ganeshubale@hotmail.com", icon: "fa-solid fa-envelope" },
             { platform: "Phone", url: "tel:+917709098935", icon: "fa-solid fa-phone" }
         ]
     },
@@ -51,12 +51,12 @@ const RESUME_DATA = {
             company: "GlobalLogic India",
             location: "Pune, India",
             period: "Aug 2022 - Jun 2026 (4 years)",
-            role: "Consultant – Engineering",
+            role: "Consultant – Senior Software Engineer",
             isParentCompany: true,
             clients: [
                 {
-                    clientName: "US Health & Wellness Pet Retailer Client",
-                    role: "Consultant – Senior Engineering",
+                    clientName: "One of the largest U.S. health and wellness company focused on pets,",
+                    role: "Consultant – Senior Software Engineer",
                     period: "May 2024 - Jun 2026 (2 years)",
                     description: "Leading iOS development for one of the largest U.S. pet supply and service retailers, enabling users to easily search, order products, and book services at discounted rates.",
                     achievements: [
@@ -67,7 +67,7 @@ const RESUME_DATA = {
                     tech: ["SwiftUI", "Swift", "Xcode", "MVVM", "Clean Architecture", "Combine", "SPM", "GraphQL", "Swinject", "MCP", "Claude Code", "GitLab"]
                 },
                 {
-                    clientName: "World's Leading Online Travel Company",
+                    clientName: "One of World's Leading Online Travel Company",
                     role: "Consultant – Senior iOS Engineer",
                     period: "Oct 2023 - May 2024 (8 months)",
                     description: "Engineered features for a global all-in-one travel companion app used by millions to search, plan, and book hotels, flights, cruises, and car rentals worldwide.",
@@ -86,7 +86,6 @@ const RESUME_DATA = {
                     achievements: [
                         "Developed custom Mobile SDKs and native iPhone applications communicating with hardware over BLE.",
                         "Implemented secure connection protocols, log uploads to cloud servers, and network coverage testing reports.",
-                        "Structured offline-first data persistence using Core Data, Realm, and SQLite."
                     ],
                     tech: ["SwiftUI", "Swift", "BLE (Bluetooth)", "Mobile SDK", "Core Data", "Realm", "SQLite", "Autolayout", "Firebase Analytics"]
                 }
@@ -119,7 +118,7 @@ const RESUME_DATA = {
                 "Developed UbiQ, Partei App, and SocialNightLife featuring real-time group chat via XMPP framework & Layer Chat APIs.",
                 "Managed complete product development lifecycle from requirement analysis to App Store release."
             ],
-            tech: ["Swift", "Objective-C", "Storyboard", "Auto-layout", "MVC", "Core Data", "SQLite", "XMPP", "Layer Chat API", "Firebase"]
+            tech: ["Swift", "Objective-C", "UIKit", "Storyboard", "Auto-layout", "MVC", "Core Data", "SQLite", "XMPP", "Layer Chat API", "Firebase"]
         }
     ],
 
@@ -143,7 +142,7 @@ const RESUME_DATA = {
                 { name: "MVVM & Clean Architecture", level: 95 },
                 { name: "SOLID Principles & Design Patterns", level: 95 },
                 { name: "RESTful APIs & GraphQL", level: 90 },
-                { name: "BLE (Bluetooth Low Energy) & IoT", level: 88 },
+                { name: "BLE (Bluetooth Low Energy) & IoT", level: 80 },
                 { name: "MDM Migration (JAMF / MobileIron)", level: 85 },
                 { name: "APNS & Firebase Push Notifications", level: 92 }
             ]
@@ -155,24 +154,26 @@ const RESUME_DATA = {
                 { name: "MCP (Model Context Protocol)", level: 95 },
                 { name: "Claude Code & GitHub Copilot", level: 95 },
                 { name: "GitLab CLI & Jira API Automation", level: 90 },
-                { name: "AI Prompt Engineering", level: 92 },                { name: "Generative AI & Agentic AI (Python)", level: 70 },                { name: "Git, SPM, CocoaPods & Xcode", level: 95 }
+                { name: "AI Prompt Engineering", level: 92 },    
+                { name: "Generative AI & Agentic AI (Python)", level: 20 },
+                { name: "Git, SPM, CocoaPods & Xcode", level: 95 }
             ]
         }
     ],
 
     projects: [
         {
-            title: "U.S. Pet Health & Wellness App",
+            title: "Health and Wellness focused app for pets",
             category: "fullstack",
             image: "",
             description: "High-scale U.S. pet supply retailer app for ordering products and booking services with custom MCP automation workflows built into CI/CD pipelines.",
-            tech: ["SwiftUI", "Combine", "GraphQL", "SPM", "MCP", "GitLab"],
+            tech: ["Swift", "SwiftUI", "Combine", "GraphQL", "SPM", "MCP", "GitLab", "Claude Code", "CLINE"],
             demoUrl: "",
             githubUrl: "",
-            featured: true
+            featured: false
         },
-        {
-            title: "Global All-In-One Travel Companion App",
+        {   
+            title: "Global All-In-One Travel App",
             category: "fullstack",
             image: "",
             description: "World-leading travel booking app for flight, hotel, and car reservations with custom Mobile UI SDK and full iPadOS optimization.",
@@ -270,6 +271,18 @@ const RESUME_DATA = {
             demoUrl: "",
             githubUrl: "https://github.com/GaneshUbale/IPO_Alert",
             featured: true
+        }
+    ],
+
+    pocsBlogs: [
+        {
+            title: "Debugging APIs like a Pro: Using Charles Proxy & Proxyman",
+            category: "blog",
+            type: "Blog",
+            icon: "fa-solid fa-newspaper",
+            description: "A practical guide to inspecting, debugging, and validating API traffic using Charles Proxy and Proxyman for mobile engineering workflows.",
+            url: "https://medium.com/@ubaleganesh096/debugging-apis-like-a-pro-using-charles-proxy-proxyman-fd21b7948516?sharedUserId=ubaleganesh096",
+            tags: ["API Debugging", "Charles Proxy", "Proxyman", "iOS"]
         }
     ],
 

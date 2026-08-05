@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initResumeContent() {
     if (typeof RESUME_DATA === 'undefined') return;
 
-    const { personal, about, experience, skills, projects, education, certifications } = RESUME_DATA;
+    const { personal, about, experience, skills, projects, pocsBlogs, education, certifications } = RESUME_DATA;
 
     // Personal & Hero Info
     if (personal) {
@@ -207,6 +207,12 @@ function initResumeContent() {
         renderProjects(projects);
     }
 
+    // POCs & Blogs Section Render
+    const pocBlogsGridEl = document.getElementById('poc-blogs-grid');
+    if (pocBlogsGridEl && pocsBlogs) {
+        renderPocBlogs(pocsBlogs);
+    }
+
     // Education & Certifications Render
     const eduListEl = document.getElementById('education-list');
     if (eduListEl && education) {
@@ -319,6 +325,32 @@ function renderProjects(projectsList) {
                 </div>
             </div>
         </div>
+    `).join('');
+}
+
+function renderPocBlogs(pocBlogsList) {
+    const pocBlogsGridEl = document.getElementById('poc-blogs-grid');
+    if (!pocBlogsGridEl) return;
+
+    pocBlogsGridEl.innerHTML = pocBlogsList.map(item => `
+        <a class="project-card glass-card poc-blog-card" href="${item.url}" target="_blank" rel="noopener noreferrer" data-category="${item.category || 'blog'}">
+            <div class="project-top">
+                <div class="project-header-meta">
+                    <i class="${item.icon || 'fa-solid fa-scroll'} project-folder-icon"></i>
+                    <div class="project-links">
+                        <span class="project-link-btn" title="Open ${item.type || 'Link'}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                    </div>
+                </div>
+                <h3 class="project-title">${item.title}</h3>
+                <p class="project-description">${item.description}</p>
+            </div>
+            <div class="project-bottom">
+                <div class="project-tech-stack">
+                    <span class="tech-tag">${item.type || 'Blog'}</span>
+                    ${(item.tags || []).map(tag => `<span class="tech-tag">${tag}</span>`).join('')}
+                </div>
+            </div>
+        </a>
     `).join('');
 }
 
