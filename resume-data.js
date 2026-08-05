@@ -276,6 +276,15 @@ const RESUME_DATA = {
 
     pocsBlogs: [
         {
+            title: "Google Antigravity Vibe Coding Portfolio POC",
+            category: "poc",
+            type: "POC",
+            icon: "fa-brands fa-github",
+            description: "A GitHub Pages portfolio POC built using Google Antigravity / vibe-coding workflow, featuring a responsive resume, skills, projects, and blog sections.",
+            url: "https://github.com/GaneshUbale/ganeshubale.github.io",
+            tags: ["Vibe Coding", "Google Antigravity", "GitHub Pages", "Portfolio", "HTML/CSS/JS"]
+        },
+        {
             title: "Debugging APIs like a Pro: Using Charles Proxy & Proxyman",
             category: "blog",
             type: "Blog",
