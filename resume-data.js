@@ -18,7 +18,7 @@ const RESUME_DATA = {
         statusText: "11+ Years Experience • Open for Senior/Lead iOS Roles",
         statusActive: true,
         location: "Solapur / Pune, India",
-        email: "ubaleganesh096@gmail.com",
+        email: "ganeshubale@hotmail.com",
         phone: "+91 7709098935",
         avatarImg: "./assets/images/avatar.jpg", // Local avatar image path
         cvUrl: "#", // Triggers dynamic PDF download
