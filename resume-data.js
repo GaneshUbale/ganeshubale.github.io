@@ -183,13 +183,13 @@ const RESUME_DATA = {
         },
         {
             title: "Uconnect Automotive IoT Connected Vehicle App",
-            category: "backend",
+            category: "fullstack",
             image: "",
             description: "Connected vehicle app allowing users to remotely lock/unlock doors, start engine, locate vehicle on maps, and interact via IoT telematics.",
             tech: ["Swift", "IoT Telematics", "Apple Maps API", "Core Data", "REST"],
             demoUrl: "",
             githubUrl: "",
-            featured: true
+            featured: false
         },
         {
             title: "Lilly iMove & Indoor Maps Enterprise Apps",
@@ -199,7 +199,7 @@ const RESUME_DATA = {
             tech: ["Swift", "JAMF MDM", "IMDF Indoor Maps", "Apple Maps API"],
             demoUrl: "",
             githubUrl: "",
-            featured: true
+            featured: false
         },
         {
             title: "ComplianceGPS (Varian Compliance Solution)",
@@ -213,17 +213,17 @@ const RESUME_DATA = {
         },
         {
             title: "BLE Hardware Medical & IoT App",
-            category: "backend",
+            category: "fullstack",
             image: "",
             description: "Native iOS app communicating with BLE IoT devices to register networks, transmit telemetry logs, and generate coverage reports.",
             tech: ["Swift", "BLE", "Core Data", "Realm", "Mobile SDK"],
             demoUrl: "",
             githubUrl: "",
-            featured: true
+            featured: false
         },
         {
             title: "Emergency Services MultiTarget System",
-            category: "backend",
+            category: "fullstack",
             image: "",
             description: "Environmental emergency response suite (Sterile Lab Services ER, MooreASG, HES ER) compiling multiple target apps from a single project codebase.",
             tech: ["Swift", "Multi-Target Architecture", "GPS Location", "APNS"],
@@ -233,7 +233,7 @@ const RESUME_DATA = {
         },
         {
             title: "UbiQ & Partei Real-Time Social Chat Apps",
-            category: "opensource",
+            category: "fullstack",
             image: "",
             description: "Social networking and event planning platforms featuring real-time group chat via XMPP framework & Layer Chat APIs with Google Maps location search.",
             tech: ["Objective-C", "Swift", "XMPP Framework", "Layer Chat API", "LinkedIn API"],
@@ -243,7 +243,7 @@ const RESUME_DATA = {
         },
         {
             title: "SocialNightLife & Mobility At Work",
-            category: "opensource",
+            category: "fullstack",
             image: "",
             description: "Nightclub & venue solution with visual floor plan reporting, alongside Mobility At Work enterprise device compliance app.",
             tech: ["Objective-C", "SwiftUI", "Core Data", "APNS", "Firebase Analytics"],
@@ -253,12 +253,22 @@ const RESUME_DATA = {
         },
         {
             title: "MCP 'Cloud Code Skill' Automation Tool",
-            category: "opensource",
+            category: "fullstack",
             image: "",
             description: "End-to-end developer automation tool integrating Model Context Protocol (MCP), Jira REST APIs, and GitLab CLI to streamline development workflows.",
             tech: ["MCP", "Claude Code", "GitLab CLI", "Jira API", "Python / Bash"],
             demoUrl: "",
             githubUrl: "",
+            featured: false
+        },
+        {
+            title: "IPO Alert System",
+            category: "opensource",
+            image: "",
+            description: "Automated tool designed to track, monitor, and send real-time notification alerts for active Initial Public Offerings (IPOs), if given conditon match.",
+            tech: ["Python", "GitHub Actions", "Selenium", "REST APIs", "Automation", "Telegram Bot", "Telegram API"],
+            demoUrl: "",
+            githubUrl: "https://github.com/GaneshUbale/IPO_Alert",
             featured: true
         }
     ],
