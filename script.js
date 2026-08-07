@@ -79,14 +79,14 @@ function initResumeContent() {
         if (downloadCvBtn) {
             downloadCvBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                downloadPDFResume();
+                downloadPDFResume(personal.cvUrl, personal.name);
             });
         }
 
         if (headerPdfBtn) {
             headerPdfBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                downloadPDFResume();
+                downloadPDFResume(personal.cvUrl, personal.name);
             });
         }
     }
@@ -634,13 +634,27 @@ function initContactForm() {
 /* ==========================================================================
    9. DYNAMIC PDF GENERATOR & DOWNLOADER
    ========================================================================== */
-function downloadPDFResume() {
+function downloadPDFResume(externalUrl, name = 'Resume') {
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toast-message');
+    const trimmedUrl = typeof externalUrl === 'string' ? externalUrl.trim() : '';
+    const isExternalDownload = trimmedUrl && trimmedUrl !== '#';
 
     if (toast && toastMsg) {
-        toastMsg.textContent = 'Generating PDF resume download...';
+        toastMsg.textContent = isExternalDownload ? 'Starting CV download from Google Drive...' : 'Generating PDF resume download...';
         toast.classList.remove('hidden');
+    }
+
+    if (isExternalDownload) {
+        const downloadUrl = getGoogleDriveDownloadUrl(trimmedUrl);
+        const filename = `${name.replace(/\s+/g, '_')}_CV.pdf`;
+        downloadExternalFile(downloadUrl, filename);
+
+        if (toast && toastMsg) {
+            toastMsg.textContent = 'Your CV download should begin shortly.';
+            setTimeout(() => toast.classList.add('hidden'), 3500);
+        }
+        return;
     }
 
     if (typeof html2pdf !== 'undefined') {
@@ -649,7 +663,7 @@ function downloadPDFResume() {
 
         const opt = {
             margin:       [0.3, 0.4, 0.4, 0.4],
-            filename:     'Ganesh_Ubale_Senior_iOS_Lead_Engineer_Resume.pdf',
+            filename:     `${name.replace(/\s+/g, '_')}_Resume.pdf`,
             image:        { type: 'jpeg', quality: 0.98 },
             html2canvas:  { scale: 2, useCORS: true, logging: false },
             jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
@@ -669,4 +683,42 @@ function downloadPDFResume() {
     } else {
         window.print();
     }
+}
+
+function getGoogleDriveDownloadUrl(url) {
+    try {
+        const parsed = new URL(url);
+        const host = parsed.hostname.toLowerCase();
+
+        if (host.includes('drive.google.com')) {
+            const pathSegments = parsed.pathname.split('/').filter(Boolean);
+            const fileIdIndex = pathSegments.indexOf('d');
+
+            if (fileIdIndex >= 0 && pathSegments[fileIdIndex + 1]) {
+                return `https://drive.google.com/uc?export=download&id=${pathSegments[fileIdIndex + 1]}`;
+            }
+
+            const idParam = parsed.searchParams.get('id');
+            if (idParam) {
+                return `https://drive.google.com/uc?export=download&id=${idParam}`;
+            }
+        }
+    } catch (err) {
+        console.warn('Invalid Google Drive URL:', url, err);
+    }
+
+    return url;
+}
+
+function downloadExternalFile(url, filename) {
+    const link = document.createElement('a');
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    if (filename) {
+        link.setAttribute('download', filename);
+    }
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
