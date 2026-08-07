@@ -24,7 +24,7 @@ const RESUME_DATA = {
         cvUrl: "#", // Triggers dynamic PDF download
         socials: [
             { platform: "GitHub", url: "https://github.com/GaneshUbale", icon: "fa-brands fa-github" },
-            { platform: "LinkedIn", url: "https://www.linkedin.com/in/ganesh-ubale-1b6ab053/", icon: "fa-brands fa-linkedin" },
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/ganeshubale/", icon: "fa-brands fa-linkedin" },
             { platform: "Email", url: "mailto:ganeshubale@hotmail.com", icon: "fa-solid fa-envelope" },
             { platform: "Phone", url: "tel:+917709098935", icon: "fa-solid fa-phone" }
         ]
