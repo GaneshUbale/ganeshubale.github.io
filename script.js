@@ -235,8 +235,11 @@ function initResumeContent() {
             <div class="cert-card">
                 <div class="cert-icon"><i class="${c.badgeIcon || 'fa-solid fa-award'}"></i></div>
                 <div>
-                    <h4 class="cert-title">${c.title}</h4>
+                    <h4 class="cert-title">
+                        ${c.url ? `<a href="${c.url}" target="_blank" rel="noopener noreferrer">${c.title}</a>` : c.title}
+                    </h4>
                     <div class="cert-issuer">${c.issuer} &bull; ${c.year}</div>
+                    ${c.url ? `<a class="cert-link" href="${c.url}" target="_blank" rel="noopener noreferrer">View certificate</a>` : ''}
                 </div>
             </div>
         `).join('');
