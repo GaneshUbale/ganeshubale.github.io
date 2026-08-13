@@ -268,7 +268,7 @@ const RESUME_DATA = {
             image: "",
             description: "Automated tool designed to track, monitor, and send real-time notification alerts for active Initial Public Offerings (IPOs), if given conditon match.",
             tech: ["Python", "GitHub Actions", "Selenium", "REST APIs", "Automation", "Telegram Bot", "Telegram API"],
-            demoUrl: "",
+            demoUrl: "https://t.me/+elf_KdkTUnU0ODA9",
             githubUrl: "https://github.com/GaneshUbale/IPO_Alert",
             featured: true
         }
