@@ -21,7 +21,7 @@ const RESUME_DATA = {
         email: "ganeshubale@hotmail.com",
         phone: "+91 7709098935",
         avatarImg: "./assets/images/avatar.jpg", // Local avatar image path
-        cvUrl: "https://drive.google.com/file/d/1GCxu21arJ83xD3loZIDrPJJBarAedNvg/view?usp=sharing", // Replace with your public Google Drive PDF share link or direct download URL
+        cvUrl: "https://drive.google.com/file/d/1KjdTzdc38Tpd2bKJsPCTtz2NvG4j7dIR/view?usp=sharing", // Replace with your public Google Drive PDF share link or direct download URL
         socials: [
             { platform: "GitHub", url: "https://github.com/GaneshUbale", icon: "fa-brands fa-github" },
             { platform: "LinkedIn", url: "https://www.linkedin.com/in/ganeshubale/", icon: "fa-brands fa-linkedin" },
